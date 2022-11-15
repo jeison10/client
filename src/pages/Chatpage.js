@@ -118,8 +118,8 @@ const Chatpage = () => {
                         
             
             setMessageList(data.res);
-            setNewMsg(data.data)
-            console.log(data.data)
+            setNewMsg(data.data);
+            console.log(data.data);
             
                        
           });
