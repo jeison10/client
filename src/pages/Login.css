@@ -20,7 +20,14 @@
     background-color: white;
   }
   
-  
+  .imageUpload {
+    background-color: white;
+    text-align: center;
+    
+  }
+
+
+
   .imageUpload{
     text-align: center;
   }

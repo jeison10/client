@@ -14,6 +14,7 @@ function App() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [image, setimage] = useState('')
+	const [Description, setDescription] = useState('')
 	const [idc, setidc] = useState(userImage)
 
 	async function registerUser(event) {
@@ -28,6 +29,7 @@ function App() {
 				name,
 				email,
 				password,
+				Description,
 				idc
 			}),
 		})
@@ -61,8 +63,15 @@ function App() {
 
 
 	return (
+
+		<>
+	
+
+
 		<div className="Auth-form-container">
-		<form className="Auth-form">
+
+
+		<div className="Auth-form">
 		  <div className="Auth-form-content">
 			<h3 className="Auth-form-title">Register</h3>
 
@@ -97,20 +106,32 @@ function App() {
 				value={password} onChange={(e) => setPassword(e.target.value)}
 			  />
 			</div>
-			
+
+			<div className="form-group mt-3">
+			  <label>Description</label>
+			  <input
+				type="text"
+				className="form-control mt-1"
+				placeholder="Tell us about you"
+				value={Description} onChange={(e) => setDescription(e.target.value)}
+			  />
+			</div>
+
 
 			<div className="imageUpload p-3">
 				
 				<img src = {idc} class="rounded float-left" alt="" width={125} height={125}/>
 	
 				<div className="form-group mt-3">
-				<input type="file"  onChange={(e) => {setimage(e.target.files[0])}}/>
+				<input type="file"  onChange={(e) => {setimage(e.target.files[0])} }/>
 	
 				<div className="form-group mt-2">
 				<button type="file"  onClick={uploadImage} className="btn btn-dark">upload</button>
 				</div>
 				</div>
 				</div>
+			
+			
 
 			<div className="d-grid gap-2 mt-3">
 			  <button type="submit" className="btn btn-primary" onClick={registerUser}>
@@ -119,8 +140,9 @@ function App() {
 			</div>
 			
 		  </div>
-		</form>
+		</div>
 	  </div>
+	  </>
 	)
 }
 

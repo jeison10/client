@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Login.css'
 
@@ -11,9 +11,7 @@ function App() {
 	const [password, setPassword] = useState('')
 	//const [login, setLogin] = useState(false)
 
-	useEffect(() => {
-		localStorage.removeItem('token')
-	})
+
 
 	async function loginUser(event) {
 		event.preventDefault()
@@ -34,7 +32,7 @@ function App() {
 		if (data.user) {
 			localStorage.setItem('token', data.user)
 			alert('Login successful')
-			window.location.href = '/chat'
+			window.location.href = '/alluser'
 		} else {
 			alert('Please check your username and password')
 			//setLogin(true)
